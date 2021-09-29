@@ -5,8 +5,8 @@ n = int(input())
 num_list = list(map(int, input().split()))
 
 memo = [[0 for _ in range(21)] for _ in range(n+1)]
-
-memo[1][num_list[0]] = 1
+# memo : i번째 덧/뺄셈의 결과에서 0~20까지 각 숫자가 나온 횟수를 산정
+memo[1][num_list[0]] = 1 #case에선 8이므로 8에 해당하는 값 +1
 
 for i in range(1, n):
     for j in range(21):

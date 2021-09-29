@@ -8,7 +8,7 @@ for i in range(n):
 
 dp = [0] * 3
 
-dp[0] = lst[0]
+dp[0] = lst[0] 
 dp[1] = lst[1] + lst[0]
 dp[2] = max(lst[2] + lst[0], dp[1], lst[1] + lst[2])
 
@@ -18,31 +18,6 @@ print(dp[-1])
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"""
 print(lst)
 max_val = 0
 for i in range(1 << n):
@@ -66,4 +41,4 @@ for i in range(1 << n):
             max_val = val
 
 print(max_val)
-"""
+
