@@ -9,6 +9,12 @@ for idx in range(N):
    anw[idx] = (bisect_right(jum,ink[idx])-1-idx)
 print(' '.join(str(x) for x in anw))
 
+#pass
+
+'''
+시간 초과
+
+bisect는 C로 구동해줘서 훨씬 빠르다.
 
 import sys; readline = sys.stdin.readline
 
@@ -31,3 +37,5 @@ for idx in range(N):
     anw[idx] = s-idx-1
 
 print(' '.join(str(x) for x in anw))
+
+'''
