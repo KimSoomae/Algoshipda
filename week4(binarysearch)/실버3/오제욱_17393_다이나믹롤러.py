@@ -1,13 +1,13 @@
-# from bisect import bisect_right
-# import sys; readline = sys.stdin.readline
-#
-# N = int(input())
-# ink = list(map(int,readline().split()))
-# jum = list(map(int,readline().split()))
-# anw = [0]*N
-# for idx in range(N):
-#    anw[idx] = (bisect_right(jum,ink[idx])-1-idx)
-# print(' '.join(str(x) for x in anw))
+from bisect import bisect_right
+import sys; readline = sys.stdin.readline
+
+N = int(input())
+ink = list(map(int,readline().split()))
+jum = list(map(int,readline().split()))
+anw = [0]*N
+for idx in range(N):
+   anw[idx] = (bisect_right(jum,ink[idx])-1-idx)
+print(' '.join(str(x) for x in anw))
 
 
 import sys; readline = sys.stdin.readline
