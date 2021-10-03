@@ -8,7 +8,7 @@ for _ in range(int(input())):
     cnt = 0
     s = 0
     e = N-1
-    while s != e:
+    while s < e:
         tmp = arr[s] + arr[e]
         if abs(K-tmp) < min_inteval:
             min_inteval = abs(K-tmp)
@@ -23,4 +23,5 @@ for _ in range(int(input())):
         else:
             s += 1
     anw.append(cnt)
+
 print('\n'.join(str(x) for x in anw))
