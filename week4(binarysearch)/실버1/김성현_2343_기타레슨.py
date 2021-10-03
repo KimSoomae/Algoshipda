@@ -5,6 +5,36 @@ sys.stdin = open('input.txt')
 N, M = map(int, input().split())
 lesson = list(map(int, input().split()))
 
+s = max(lesson); e = sum(lesson)
+
+while s <= e:
+    mid = (s + e) // 2
+
+    cnt = 0
+    value = 0
+
+    for les in lesson:
+        if value + les > mid:
+            cnt += 1
+            value = 0
+        
+        value += les
+    
+    if value:
+        cnt += 1
+    else:
+        pass
+
+    if cnt <= M:
+        e = mid -1
+    else:
+        s = mid + 1
+
+print(s)
+
+
+''' 시간초과 코드
+
 s = 1; e = sum(lesson)
 res = 10**6
 while s <= e:
@@ -47,3 +77,4 @@ while s <= e:
         e = mid -1
 
 print(res)
+'''
