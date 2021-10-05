@@ -42,16 +42,18 @@
 # anw = min(anw,anw2)
 # print(anw)
 #
-
-
-# 이분 탐색 좋은 문제
-
+#
+#
+# # 이분 탐색 좋은 문제
+#
 # class Remocon:
 #     def __init__(self):
 #         self.buttons = list(range(10))
 #
 #     def distroy(self, b):
 #         self.buttons.remove(b)
+#
+#
 #
 #     def __getitem__(self, n):
 #         l = len(self.buttons)
