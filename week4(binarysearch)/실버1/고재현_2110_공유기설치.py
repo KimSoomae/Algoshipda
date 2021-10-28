@@ -18,8 +18,6 @@ def binary_search(wifi, start, end):
 
 
 
-
-
 n, c = map(int, input().split())
 wifi = [0] * n
 for k in range(n):
