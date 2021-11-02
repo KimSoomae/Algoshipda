@@ -7,7 +7,7 @@ def Find_set(x):
 
 def Union(x, y):
     root_x, root_y = Find_set(x), Find_set(y)
-    p[root_x] = root_y
+    p[max(root_x, root_y)] = min(root_x, root_y)
 
 N = int(input())
 p = [i for i in range(N+1)]

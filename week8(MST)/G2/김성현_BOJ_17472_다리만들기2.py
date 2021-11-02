@@ -3,7 +3,7 @@ from pprint import pprint
 dc = [0, 0, -1, 1]
 dr = [1, -1, 0, 0]
 
-def dfs(c, r, cnt):
+def dfs(c, r, cnt): #각 구역을 넘버링하는 함수
     board[c][r] = cnt
     visited[c][r] = 1
 
@@ -15,7 +15,7 @@ def dfs(c, r, cnt):
         if 0 <= nc <= C-1 and 0 <= nr <= R-1:
             if board[nc][nr] and not visited[nc][nr]:
                 dfs(nc, nr, cnt)
-                
+    
 
 def find_bridge(c, r, number):
     start_bridge = board[c][r]
@@ -44,7 +44,7 @@ def find_set(x):
 
 def Union(x, y):
     root_x, root_y = find_set(x), find_set(y)
-    p[root_x] = root_y
+    p[max(root_x, root_y)] = min(root_x, root_y)
 
 
 C, R = map(int, input().split())
@@ -69,26 +69,27 @@ for i in range(cnt - 1):
     for c, r in G_list:
         find_bridge(c, r, board[c][r])
 
+
+# KRUSKAL
 if MST_graph:
     MST_graph.sort(key=lambda x: x[2])
     p = [i for i in range(cnt+1)]
     bridge_cnt = 0
     bridge_length = 0
     made = True
-    while bridge_cnt < cnt-1:
-        u, v, val = MST_graph.pop(0)
+    for u, v, val in MST_graph:
         
         if find_set(u) != find_set(v):
             Union(u, v)
             bridge_length += val
             bridge_cnt += 1
-        if not MST_graph and bridge_cnt < cnt-1:
-            print(-1)
-            made = False
+        if bridge_cnt == cnt-1:
             break
-    if made == True:
+    if bridge_cnt != cnt-1:
+        print(-1)
+    else:
         print(bridge_length)
+    
 else:
     print(-1)
-
 
