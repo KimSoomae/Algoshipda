@@ -34,6 +34,7 @@ for val, i, j in G:
         Total_cost += val
         Union(i, j)
         count += 1
+        
     if count == N-1:
         break
 print(Total_cost)
